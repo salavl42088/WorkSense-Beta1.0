@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shielded Metal Arc Welding (SMAW) Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('Background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Shielded Metal Arc Welding (SMAW) Assessment</h2>
+  <form id="assessmentForm"></form>
+  <div style="text-align: center; margin-top: 20px;">
+    <button type="submit" class="submit-btn" form="assessmentForm">Submit</button>
+  </div>
+  <div id="results"></div>
+</div>
+
+<script>
+  const questions = [
+    {q: 'What does SMAW stand for?', a: 'A', options: ['Shielded Metal Arc Welding', 'Submerged Metal Arc Welding', 'Solid Metal Arc Welding', 'Semi-Automatic Metal Arc Welding']},
+    {q: 'Which type of electrode is used in SMAW?', a: 'A', options: ['Flux-coated electrode', 'Bare metal wire', 'Tungsten electrode', 'Carbon electrode']},
+    {q: 'What is the primary purpose of the flux coating on an SMAW electrode?', a: 'A', options: ['Stabilize the arc and shield the molten weld pool from atmospheric contamination', 'Increase electrical conductivity', 'Add alloying elements to the weld', 'Reduce electrode consumption']},
+    {q: 'Which personal protective equipment (PPE) is essential during SMAW operations?', a: 'A', options: ['Welding helmet with appropriate filter lens, flame-resistant gloves, and protective clothing', 'Safety glasses only', 'Earplugs and dust mask', 'Hard hat and steel-toed boots']},
+    {q: 'What is a common cause of porosity in SMAW welds?', a: 'A', options: ['Contaminants such as oil, rust, or moisture on the base metal', 'Using a high-quality electrode', 'Proper electrode storage', 'Correct welding technique']},
+    {q: 'How often should welding equipment be inspected for safety and functionality?', a: 'A', options: ['Before each use', 'Weekly', 'Monthly', 'Annually']},
+    {q: "What does the '70' indicate in an E7018 electrode classification?", a: 'A', options: ['Minimum tensile strength of 70,000 psi', '70% iron powder in the flux coating', 'Suitable for welding at 70°F and above', '70% arc efficiency']},
+    {q: "Which welding position is indicated by the '1' in the E7018 electrode classification?", a: 'A', options: ['All positions (flat, horizontal, vertical, and overhead)', 'Flat position only', 'Horizontal position only', 'Vertical position only']},
+    {q: 'What is the recommended action if excessive spatter occurs during SMAW?', a: 'A', options: ['Adjust welding current and maintain proper arc length', 'Increase travel speed significantly', 'Use a larger diameter electrode', 'Decrease shielding gas flow rate']},
+    {q: 'Why is proper ventilation important during SMAW?', a: 'A', options: ['To remove harmful fumes and gases from the breathing zone', 'To cool the welding equipment', 'To prevent overheating of the workpiece', 'To improve visibility of the weld area']},
+    {q: 'What is the effect of using an arc length that is too long during SMAW?', a: 'A', options: ['Increased spatter and potential weld defects', 'Deeper weld penetration', 'Reduced weld bead width', 'Improved arc stability']},
+    {q: 'How can a welder prevent undercutting in SMAW?', a: 'A', options: ['Use correct electrode angles, reduce travel speed, and use the proper welding current for the electrode size and welding position', 'Increase welding current and travel speed', 'Use a larger diameter electrode', 'Decrease arc length significantly']},
+    {q: 'What information does a Welding Procedure Specification (WPS) provide?', a: 'A', options: ['Guidelines and parameters for performing welding operations', 'Inventory of welding consumables', 'Schedule of welding projects', 'List of qualified welders in the shop']},
+    {q: 'What is the purpose of preheating the base metal before welding in SMAW?', a: 'A', options: ['To reduce the rate of cooling of the weld metal and minimize the risk of cracking', 'To increase the extent of penetration', 'To minimize the porosity problem', 'To increase the metal deposition rate']},
+    {q: 'How should electrodes be stored to prevent moisture absorption?', a: 'A', options: ['In a dry, heated storage oven as recommended by the manufacturer', 'In a sealed plastic bag', 'In an open container near the welding area', 'In a refrigerated environment']}
+  ];
+
+  const form = document.getElementById('assessmentForm');
+  questions.forEach((item, index) => {
+    const qNum = index + 1;
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<p>${qNum}. ${item.q}</p>`;
+    const answerDiv = document.createElement('div');
+    answerDiv.className = 'answers';
+    ['A', 'B', 'C', 'D'].forEach((letter, i) => {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="q${qNum}"> ${letter}) ${item.options[i]}`;
+      answerDiv.appendChild(label);
+    });
+    div.appendChild(answerDiv);
+    form.appendChild(div);
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let score = 0;
+    questions.forEach((item, i) => {
+      const selected = document.querySelector(`input[name="q${i + 1}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(item.a)) {
+        score++;
+      }
+    });
+    let level = '';
+    if (score <= 7) level = 'Beginner';
+    else if (score <= 11) level = 'Intermediate';
+    else if (score <= 13) level = 'Advanced';
+    else level = 'Expert';
+    document.getElementById('results').innerHTML = `You scored <strong>${score}/15</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

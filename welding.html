@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welding Assessments</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("Background.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      width: 120px;
+    }
+    header h1 {
+      color: #55acee;
+      font-size: 2em;
+      margin: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .assessment {
+      border: 2px solid #555a60;
+      border-radius: 8px;
+      padding: 20px;
+      background: rgba(34, 34, 34, 0.95);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .assessment:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .assessment h2 {
+      margin-top: 0;
+      color: #86b7d7;
+    }
+    .assessment p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #d0d0d0;
+    }
+    .assessment a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #55acee;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .assessment a:hover {
+      background-color: #1e3c56;
+    }
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="LOGO.png" alt="WorkSense Logo">
+    <h1>Welding Assessments</h1>
+  </header>
+  <div class="container">
+    <div class="grid">
+      <section class="assessment" id="smaw">
+        <h2>Shielded Metal Arc Welding (SMAW)</h2>
+        <p>Evaluate your understanding of SMAW fundamentals, electrode selection, and defect mitigation strategies.</p>
+        <a href="smaw_test_questions.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="gtaw">
+        <h2>Gas Tungsten Arc Welding (GTAW)</h2>
+        <p>Assess your precision welding knowledge including tungsten electrode use, shielding gases, and polarity settings.</p>
+        <a href="gtaw_test_questions.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="fcaw">
+        <h2>Flux-Cored Arc Welding (FCAW)</h2>
+        <p>Assess your understanding of FCAW techniques, electrode types, and defect prevention methods.</p>
+        <a href="fcaw_test_questions.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="paw">
+        <h2>Plasma Arc Welding (PAW)</h2>
+        <p>Review your knowledge of plasma arc control, orifice design, and keyhole welding applications.</p>
+        <a href="paw_test_questions.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="gmaw">
+        <h2>Gas Metal Arc Welding (GMAW)</h2>
+        <p>Check your grasp on metal transfer modes, shielding gases, and GMAW troubleshooting techniques.</p>
+        <a href="gmaw_test_questions.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="welding-personality">
+        <h2>Welding Personality Assessment</h2>
+        <p>Discover how your traits align with welding work environments, teamwork, safety awareness, and adaptability.</p>
+        <a href="welding_personality_assessment.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="weld-defects">
+        <h2>Weld Defect Identification</h2>
+        <p>Test your ability to visually identify common weld defects using a matching format.</p>
+        <a href="weld_defects_test.html">Take the Test</a>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

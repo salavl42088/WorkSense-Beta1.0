@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flux-Cored Arc Welding (FCAW) Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('Background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Flux-Cored Arc Welding (FCAW) Assessment</h2>
+  <form id="assessmentForm"></form>
+  <div style="text-align: center; margin-top: 20px;">
+    <button type="submit" class="submit-btn" form="assessmentForm">Submit</button>
+  </div>
+  <div id="results"></div>
+</div>
+
+<script>
+  const questions = [
+    {q: 'What does FCAW stand for?', a: 'A', options: ['Flux-Cored Arc Welding', 'Flux-Covered Arc Welding', 'Flux-Cored Aluminum Welding', 'Flux-Covered Aluminum Welding']},
+    {q: 'Which type of electrode is used in FCAW?', a: 'B', options: ['Solid wire electrode', 'Flux-cored tubular electrode', 'Tungsten electrode', 'Covered stick electrode']},
+    {q: 'What is the primary function of the flux in FCAW electrodes?', a: 'B', options: ['To add alloying elements to the weld', 'To stabilize the arc and shield the molten weld pool from atmospheric contamination', 'To increase electrical conductivity', 'To reduce electrode consumption']},
+    {q: 'Which shielding gas is commonly used with FCAW-G (Gas-shielded Flux-Cored Arc Welding)?', a: 'A', options: ['100% Carbon Dioxide (CO₂)', '100% Argon', 'Argon-Helium mixture', 'Oxygen']},
+    {q: "What does the '1' indicate in an E71T-1 electrode classification?", a: 'A', options: ['Suitable for all positions', 'Suitable for flat and horizontal positions only', 'Suitable for vertical and overhead positions only', 'Suitable for flat position only']},
+    {q: 'How often should welding equipment be inspected for safety and functionality?', a: 'A', options: ['Before each use', 'Weekly', 'Monthly', 'Annually']},
+    {q: 'What is a common cause of porosity in FCAW welds?', a: 'A', options: ['Contaminants such as oil, rust, or moisture on the base metal', 'Using a high-quality electrode', 'Proper electrode storage', 'Correct welding technique']},
+    {q: 'Which personal protective equipment (PPE) is essential during FCAW operations?', a: 'A', options: ['Welding helmet with appropriate filter lens, flame-resistant gloves, and protective clothing', 'Safety glasses only', 'Earplugs and dust mask', 'Hard hat and steel-toed boots']},
+    {q: 'What is the effect of using an arc length that is too long during FCAW?', a: 'A', options: ['Increased spatter and potential weld defects', 'Deeper weld penetration', 'Reduced weld bead width', 'Improved arc stability']},
+    {q: 'Why is proper ventilation important during FCAW?', a: 'A', options: ['To remove harmful fumes and gases from the breathing zone', 'To cool the welding equipment', 'To prevent overheating of the workpiece', 'To improve visibility of the weld area']},
+    {q: 'What is the recommended action if excessive spatter occurs during FCAW?', a: 'A', options: ['Adjust welding current and maintain proper arc length', 'Increase travel speed significantly', 'Use a larger diameter electrode', 'Decrease shielding gas flow rate']},
+    {q: 'How can a welder prevent undercutting in FCAW?', a: 'A', options: ['Use correct electrode angles, reduce travel speed, and use the proper welding current for the electrode size and welding position', 'Increase welding current and travel speed', 'Use a larger diameter electrode', 'Decrease arc length significantly']},
+    {q: 'What information does a Welding Procedure Specification (WPS) provide?', a: 'A', options: ['Guidelines and parameters for performing welding operations', 'Inventory of welding consumables', 'Schedule of welding projects', 'List of qualified welders in the shop']},
+    {q: 'What is the purpose of preheating the base metal before welding in FCAW?', a: 'A', options: ['To reduce the rate of cooling of the weld metal and minimize the risk of cracking', 'To increase the extent of penetration', 'To minimize the porosity problem', 'To increase the metal deposition rate']},
+    {q: 'How should FCAW electrodes be stored to prevent moisture absorption?', a: 'A', options: ['In a dry, heated storage oven as recommended by the manufacturer', 'In a sealed plastic bag', 'In an open container near the welding area', 'In a refrigerated environment']}
+  ];
+
+  const form = document.getElementById('assessmentForm');
+  questions.forEach((item, index) => {
+    const qNum = index + 1;
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<p>${qNum}. ${item.q}</p>`;
+    const answerDiv = document.createElement('div');
+    answerDiv.className = 'answers';
+    ['A', 'B', 'C', 'D'].forEach((letter, i) => {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="q${qNum}"> ${letter}) ${item.options[i]}`;
+      answerDiv.appendChild(label);
+    });
+    div.appendChild(answerDiv);
+    form.appendChild(div);
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let score = 0;
+    questions.forEach((item, i) => {
+      const selected = document.querySelector(`input[name="q${i + 1}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(item.a)) {
+        score++;
+      }
+    });
+    let level = '';
+    if (score <= 7) level = 'Beginner';
+    else if (score <= 11) level = 'Intermediate';
+    else if (score <= 13) level = 'Advanced';
+    else level = 'Expert';
+    document.getElementById('results').innerHTML = `You scored <strong>${score}/15</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

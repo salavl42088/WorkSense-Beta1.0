@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material Handler Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2e2e2e;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Material Handler Assessment</h2>
+  <form id="assessmentForm">
+    <div class="question">
+  <p>1. What is the primary role of a material handler?</p>
+  <div class="answers">
+    <label><input type="radio" name="q1"> A) Supervising warehouse operations</label>
+    <label><input type="radio" name="q1"> B) Moving and organizing materials within a facility</label>
+    <label><input type="radio" name="q1"> C) Handling customer service inquiries</label>
+    <label><input type="radio" name="q1"> D) Designing inventory systems</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>2. What should you do before lifting a heavy item manually?</p>
+  <div class="answers">
+    <label><input type="radio" name="q2"> A) Bend at the waist and lift quickly</label>
+    <label><input type="radio" name="q2"> B) Twist while lifting</label>
+    <label><input type="radio" name="q2"> C) Bend your knees and keep your back straight</label>
+    <label><input type="radio" name="q2"> D) Hold the item away from your body</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>3. Which PPE is most important when moving heavy materials?</p>
+  <div class="answers">
+    <label><input type="radio" name="q3"> A) Safety glasses</label>
+    <label><input type="radio" name="q3"> B) Steel-toe boots</label>
+    <label><input type="radio" name="q3"> C) Hearing protection</label>
+    <label><input type="radio" name="q3"> D) Dust mask</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>4. When using a pallet jack, you should always:</p>
+  <div class="answers">
+    <label><input type="radio" name="q4"> A) Push the load ahead of you</label>
+    <label><input type="radio" name="q4"> B) Pull the jack in reverse around blind corners</label>
+    <label><input type="radio" name="q4"> C) Ensure the path is clear and the load is stable</label>
+    <label><input type="radio" name="q4"> D) Stack items as high as possible</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>5. What is the safest way to handle a spill in the warehouse?</p>
+  <div class="answers">
+    <label><input type="radio" name="q5"> A) Walk around it until someone else cleans it</label>
+    <label><input type="radio" name="q5"> B) Ignore it if it’s small</label>
+    <label><input type="radio" name="q5"> C) Cover it with cardboard or plastic</label>
+    <label><input type="radio" name="q5"> D) Notify a supervisor and clean it using proper procedures</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>6. How often should a crane or hoist be inspected?</p>
+  <div class="answers">
+    <label><input type="radio" name="q6"> A) Once per year</label>
+    <label><input type="radio" name="q6"> B) Weekly</label>
+    <label><input type="radio" name="q6"> C) Before each use</label>
+    <label><input type="radio" name="q6"> D) Only when it breaks</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>7. What tool is best for checking the weight of a pallet?</p>
+  <div class="answers">
+    <label><input type="radio" name="q7"> A) Ruler</label>
+    <label><input type="radio" name="q7"> B) Floor scale</label>
+    <label><input type="radio" name="q7"> C) Stopwatch</label>
+    <label><input type="radio" name="q7"> D) Level</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>8. When stacking boxes, what pattern helps increase stability?</p>
+  <div class="answers">
+    <label><input type="radio" name="q8"> A) Pyramid stack</label>
+    <label><input type="radio" name="q8"> B) Straight stack only</label>
+    <label><input type="radio" name="q8"> C) Interlocking or brick pattern</label>
+    <label><input type="radio" name="q8"> D) Tipping slightly inward</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>9. Why is proper labeling important in material handling?</p>
+  <div class="answers">
+    <label><input type="radio" name="q9"> A) It looks more professional</label>
+    <label><input type="radio" name="q9"> B) It helps identify hazardous materials</label>
+    <label><input type="radio" name="q9"> C) Labels are usually optional</label>
+    <label><input type="radio" name="q9"> D) So items can be reused later</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>10. What should you do if a load appears unstable before moving it?</p>
+  <div class="answers">
+    <label><input type="radio" name="q10"> A) Move it slowly and carefully</label>
+    <label><input type="radio" name="q10"> B) Leave it for the next shift</label>
+    <label><input type="radio" name="q10"> C) Attempt to balance it while moving</label>
+    <label><input type="radio" name="q10"> D) Re-stack or secure the load before moving</label>
+  </div>
+</div>
+    <div style="text-align: center; margin-top: 20px;">
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+  </form>
+  <div id="results"></div>
+</div>
+
+<script>
+  document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const correctAnswers = {
+      q1: 'B',
+      q2: 'C',
+      q3: 'B',
+      q4: 'C',
+      q5: 'D',
+      q6: 'C',
+      q7: 'B',
+      q8: 'A',
+      q9: 'B',
+      q10: 'A'
+    };
+
+    let score = 0;
+    for (let q in correctAnswers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(correctAnswers[q])) {
+        score++;
+      }
+    }
+
+    let level = '';
+    if (score <= 4) level = 'Beginner';
+    else if (score <= 7) level = 'Intermediate';
+    else if (score <= 9) level = 'Advanced';
+    else level = 'Expert';
+
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `You scored <strong>${score}/10</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

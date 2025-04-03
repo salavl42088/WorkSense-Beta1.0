@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manufacturing Assessments</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("Background.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      width: 120px;
+    }
+    header h1 {
+      color: #55acee;
+      font-size: 2em;
+      margin: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .assessment {
+      border: 2px solid #555a60;
+      border-radius: 8px;
+      padding: 20px;
+      background: rgba(34, 34, 34, 0.95);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .assessment:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .assessment h2 {
+      margin-top: 0;
+      color: #86b7d7;
+    }
+    .assessment p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #d0d0d0;
+    }
+    .assessment a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #55acee;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .assessment a:hover {
+      background-color: #1e3c56;
+    }
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="LOGO.png" alt="WorkSense Logo">
+    <h1>Manufacturing Assessments</h1>
+  </header>
+  <div class="container">
+    <div class="grid">
+      <section class="assessment" id="material-handler">
+        <h2>Material Handler Assessment</h2>
+        <p>Evaluate your knowledge of inventory movement, safety procedures, and efficiency in a warehouse environment.</p>
+        <a href="material_handler_assessment.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="forklift-operator">
+        <h2>Forklift Operator Assessment</h2>
+        <p>Assess your understanding of forklift operation, safety protocols, and equipment inspection procedures.</p>
+        <a href="forklift_operator_assessment.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="order-picker">
+        <h2>Order Picker/Packer Assessment</h2>
+        <p>Test your accuracy, order fulfillment knowledge, and packaging practices in fast-paced environments.</p>
+        <a href="order_picker_assessment.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="shipping-receiving">
+        <h2>Shipping & Receiving Assessment</h2>
+        <p>Measure your familiarity with receiving processes, shipment tracking, and documentation accuracy.</p>
+        <a href="shipping_receiving_assessment.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="machine-operator">
+        <h2>Machine Operator Assessment</h2>
+        <p>Review your ability to operate machinery, understand production requirements, and ensure equipment safety.</p>
+        <a href="machine_operator_assessment.html">Take the Test</a>
+      </section>
+      <section class="assessment" id="quality-control">
+        <h2>Quality Control Inspector Assessment</h2>
+        <p>Evaluate your skill in identifying product issues, maintaining standards, and documenting quality checks.</p>
+        <a href="quality_control_inspector_assessment.html">Take the Test</a>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

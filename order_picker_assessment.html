@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Picker/Packer Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2e2e2e;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Order Picker/Packer Assessment</h2>
+  <form id="assessmentForm">
+    <div class="question">
+      <p>1. What is the primary responsibility of an order picker/packer?</p>
+      <div class="answers">
+        <label><input type="radio" name="q1"> A) Supervising warehouse staff</label>
+        <label><input type="radio" name="q1"> B) Operating heavy machinery</label>
+        <label><input type="radio" name="q1"> C) Selecting and packing items accurately for shipment</label>
+        <label><input type="radio" name="q1"> D) Managing inventory records</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. When picking an order, what is the best practice to ensure accuracy?</p>
+      <div class="answers">
+        <label><input type="radio" name="q2"> A) Estimate the quantities based on visual assessment</label>
+        <label><input type="radio" name="q2"> B) Use a handheld scanner to verify each item</label>
+        <label><input type="radio" name="q2"> C) Rely on memory for item locations</label>
+        <label><input type="radio" name="q2"> D) Pick items as quickly as possible without verification</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3. How should fragile items be packed for shipping?</p>
+      <div class="answers">
+        <label><input type="radio" name="q3"> A) Place them directly in the box without padding</label>
+        <label><input type="radio" name="q3"> B) Wrap them securely in bubble wrap and fill empty spaces with padding</label>
+        <label><input type="radio" name="q3"> C) Use a larger box with no padding for extra space</label>
+        <label><input type="radio" name="q3"> D) Stack them with heavier items on top</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>4. What does the \"First In, First Out\" (FIFO) principle refer to in a warehouse setting?</p>
+      <div class="answers">
+        <label><input type="radio" name="q4"> A) Shipping the largest orders first</label>
+        <label><input type="radio" name="q4"> B) Prioritizing orders from the most valuable customers</label>
+        <label><input type="radio" name="q4"> C) Ensuring that the oldest inventory is used or shipped first</label>
+        <label><input type="radio" name="q4"> D) Picking items that are easiest to access first</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>5. If you cannot locate a product in its designated location, what should you do?</p>
+      <div class="answers">
+        <label><input type="radio" name="q5"> A) Select a similar product as a substitute</label>
+        <label><input type="radio" name="q5"> B) Skip the item and continue with the next</label>
+        <label><input type="radio" name="q5"> C) Inform your supervisor or inventory control immediately</label>
+        <label><input type="radio" name="q5"> D) Wait until the end of your shift to report the issue</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>6. Why is it important to maintain a clean and organized workspace in the packing area?</p>
+      <div class="answers">
+        <label><input type="radio" name="q6"> A) To create a pleasant environment for visitors</label>
+        <label><input type="radio" name="q6"> B) To reduce the time spent searching for packing materials</label>
+        <label><input type="radio" name="q6"> C) To comply with personal preferences</label>
+        <label><input type="radio" name="q6"> D) To minimize the need for cleaning staff</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>7. What is a common safety procedure when operating a pallet jack?</p>
+      <div class="answers">
+        <label><input type="radio" name="q7"> A) Push the load instead of pulling it</label>
+        <label><input type="radio" name="q7"> B) Overload the pallet jack to reduce trips</label>
+        <label><input type="radio" name="q7"> C) Ensure the load is stable and does not exceed weight limits</label>
+        <label><input type="radio" name="q7"> D) Move as quickly as possible to increase efficiency</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>8. How can an order picker/packer contribute to inventory accuracy?</p>
+      <div class="answers">
+        <label><input type="radio" name="q8"> A) By memorizing inventory counts</label>
+        <label><input type="radio" name="q8"> B) By reporting discrepancies and damaged goods promptly</label>
+        <label><input type="radio" name="q8"> C) By rearranging stock to fit more items</label>
+        <label><input type="radio" name="q8"> D) By focusing solely on speed during picking</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>9. What should you do if you notice a safety hazard in the warehouse?</p>
+      <div class="answers">
+        <label><input type="radio" name="q9"> A) Ignore it if it does not affect your work</label>
+        <label><input type="radio" name="q9"> B) Attempt to fix it yourself immediately</label>
+        <label><input type="radio" name="q9"> C) Report it to your supervisor and ensure colleagues are aware</label>
+        <label><input type="radio" name="q9"> D) Wait until the next safety meeting to bring it up</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>10. How do you handle an order with missing or incomplete information?</p>
+      <div class="answers">
+        <label><input type="radio" name="q10"> A) Guess the missing details based on previous orders</label>
+        <label><input type="radio" name="q10"> B) Proceed with the available information and ship the order</label>
+        <label><input type="radio" name="q10"> C) Contact the relevant department or supervisor to obtain the correct information</label>
+        <label><input type="radio" name="q10"> D) Cancel the order and move to the next one</label>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+  </form>
+  <div id="results"></div>
+</div>
+
+<script>
+  document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const correctAnswers = {
+      q1: 'C',
+      q2: 'B',
+      q3: 'B',
+      q4: 'C',
+      q5: 'C',
+      q6: 'B',
+      q7: 'C',
+      q8: 'B',
+      q9: 'C',
+      q10: 'C'
+    };
+
+    let score = 0;
+    for (let q in correctAnswers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(correctAnswers[q])) {
+        score++;
+      }
+    }
+
+    let level = '';
+    if (score <= 4) level = 'Beginner';
+    else if (score <= 7) level = 'Intermediate';
+    else if (score <= 9) level = 'Advanced';
+    else level = 'Expert';
+
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `You scored <strong>${score}/10</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

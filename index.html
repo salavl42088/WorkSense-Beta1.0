@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorkSense | Choose Your Track</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("Background.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      width: 120px;
+    }
+    header h1 {
+      color: #55acee;
+      font-size: 2em;
+      margin: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 30px;
+      color: #86b7d7;
+    }
+    .track-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .track-buttons a {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 1.2em;
+      background-color: #55acee;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+    .track-buttons a:hover {
+      background-color: #1e3c56;
+    }
+    @media (max-width: 600px) {
+      .track-buttons {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="LOGO.png" alt="WorkSense Logo">
+    <h1>WorkSense</h1>
+  </header>
+  <div class="container">
+    <h2>Choose Your Assessment Track</h2>
+    <div class="track-buttons">
+      <a href="welding.html">Welding Assessments</a>
+      <a href="manufacturing.html">Manufacturing Assessments</a>
+    </div>
+  </div>
+</body>
+</html>

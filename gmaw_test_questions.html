@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gas Metal Arc Welding (GMAW) Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('Background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Gas Metal Arc Welding (GMAW) Assessment</h2>
+  <form id="assessmentForm">
+    <!-- All 15 questions will be dynamically generated below -->
+  </form>
+  <div style="text-align: center; margin-top: 20px;">
+    <button type="submit" class="submit-btn" form="assessmentForm">Submit</button>
+  </div>
+  <div id="results"></div>
+</div>
+
+<script>
+  const questions = [
+    {q: '1. What shielding gas is most commonly used for welding mild steel using GMAW?', a: 'B', options: ['Pure Argon', 'Argon and Carbon Dioxide mixture', 'Pure Helium', 'Nitrogen']},
+    {q: '2. When operating a crane in your welding area, how frequently should it be visually inspected for safe operation?', a: 'C', options: ['Monthly', 'Weekly', 'Daily', 'Only after a noticeable problem']},
+    {q: '3. What type of electrode is used in GMAW?', a: 'A', options: ['Consumable wire electrode', 'Non-consumable tungsten electrode', 'Coated stick electrode', 'Carbon electrode']},
+    {q: '4. Excessive spatter during GMAW welding can often be caused by:', a: 'C', options: ['Proper shielding gas flow', 'Correct wire speed', 'High voltage or incorrect wire speed settings', 'Using a clean base metal']},
+    {q: '5. Which PPE is absolutely necessary during GMAW operations?', a: 'A', options: ['Flame-resistant gloves, helmet with filter lens, and proper clothing', 'Only safety glasses and boots', 'Regular gloves and clear goggles', 'Earplugs and cotton apron']},
+    {q: '6. If the weld bead has significant porosity, what is the most likely cause?', a: 'C', options: ['Base metal too thick', 'Incorrect travel angle', 'Insufficient or contaminated shielding gas', 'Welding wire too thin']},
+    {q: '7. To prevent wire feed issues, you should regularly inspect and maintain:', a: 'B', options: ['Gas cylinder valves', 'Wire feed rollers and liners', 'Welding table surface', 'Electrode holders']},
+    {q: '8. For thicker metal welds, the preferred transfer mode in GMAW is typically:', a: 'C', options: ['Short circuit transfer', 'Globular transfer', 'Spray transfer', 'Pulse transfer']},
+    {q: '9. How can a welder immediately correct an unstable arc while welding?', a: 'B', options: ['Increase the wire feed speed drastically', 'Adjust voltage and wire speed settings', 'Use a different shielding gas', 'Lower the welding helmet shade']},
+    {q: '10. What can excessive gas flow cause in a GMAW process?', a: 'B', options: ['Better penetration', 'Porosity', 'Increased spatter', 'Stable arc']},
+    {q: '11. When welding in overhead or vertical positions, which GMAW technique helps maintain weld pool control?', a: 'C', options: ['Increase gas flow', 'Use push technique exclusively', 'Reduce voltage and amperage slightly', 'Use maximum wire feed speed']},
+    {q: '12. Proper grounding in GMAW is critical to prevent:', a: 'B', options: ['Excessive slag formation', 'Uncontrolled arc and welding defects', 'Premature wire melting', 'Wire feed stoppage']},
+    {q: '13. What information does a Welding Procedure Specification (WPS) provide?', a: 'B', options: ['Worker pay rate', 'Guidelines and parameters for performing welding operations', 'Welding equipment prices', 'Inventory of PPE']},
+    {q: '14. Before starting your shift, the first action regarding your welding equipment should always be:', a: 'B', options: ['Adjust voltage to maximum', 'Conduct a thorough equipment and safety inspection', 'Start welding immediately', 'Change the shielding gas cylinder']},
+    {q: '15. If you encounter irregular weld bead profiles, you should first check:', a: 'C', options: ['Gas cylinder expiration date', 'Your welding helmet shade', 'Equipment settings and electrode alignment', 'Crane safety inspection tags']}
+  ];
+
+  const form = document.getElementById('assessmentForm');
+  questions.forEach((item, index) => {
+    const qNum = index + 1;
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<p>${item.q}</p>`;
+    const answerDiv = document.createElement('div');
+    answerDiv.className = 'answers';
+    ['A', 'B', 'C', 'D'].forEach((letter, i) => {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="q${qNum}"> ${letter}) ${item.options[i]}`;
+      answerDiv.appendChild(label);
+    });
+    div.appendChild(answerDiv);
+    form.appendChild(div);
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let score = 0;
+    questions.forEach((item, i) => {
+      const selected = document.querySelector(`input[name="q${i + 1}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(item.a)) {
+        score++;
+      }
+    });
+    let level = '';
+    if (score <= 7) level = 'Beginner';
+    else if (score <= 11) level = 'Intermediate';
+    else if (score <= 13) level = 'Advanced';
+    else level = 'Expert';
+    document.getElementById('results').innerHTML = `You scored <strong>${score}/15</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

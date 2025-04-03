@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forklift Operator Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2e2e2e;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Forklift Operator Assessment</h2>
+  <form id="assessmentForm">
+    <div class="question">
+  <p>1. What is the primary reason for conducting a pre-operation inspection of a forklift?</p>
+  <div class="answers">
+    <label><input type="radio" name="q1"> A) To ensure the forklift is clean</label>
+    <label><input type="radio" name="q1"> B) To verify the operator's familiarity with controls</label>
+    <label><input type="radio" name="q1"> C) To identify any mechanical issues that could affect safety</label>
+    <label><input type="radio" name="q1"> D) To check the availability of fuel</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>2. When approaching an intersection in a warehouse, what is the safest action for a forklift operator to take?</p>
+  <div class="answers">
+    <label><input type="radio" name="q2"> A) Speed up to clear the intersection quickly</label>
+    <label><input type="radio" name="q2"> B) Sound the horn and proceed without stopping</label>
+    <label><input type="radio" name="q2"> C) Slow down, sound the horn, and look both ways before proceeding</label>
+    <label><input type="radio" name="q2"> D) Stop and wait for a signal from pedestrians</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>3. What is the recommended position of the forks when traveling without a load on a level surface?</p>
+  <div class="answers">
+    <label><input type="radio" name="q3"> A) Raised to at least 12 inches above the ground</label>
+    <label><input type="radio" name="q3"> B) Tilted forward and close to the ground</label>
+    <label><input type="radio" name="q3"> C) Lowered and tilted back slightly, about 4-6 inches above the ground</label>
+    <label><input type="radio" name="q3"> D) Fully lowered, resting on the ground</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>4. If a forklift begins to tip over, what should the operator do?</p>
+  <div class="answers">
+    <label><input type="radio" name="q4"> A) Jump out immediately to avoid injury</label>
+    <label><input type="radio" name="q4"> B) Hold on firmly, stay in the seat, and brace with feet pressing down</label>
+    <label><input type="radio" name="q4"> C) Attempt to steer in the opposite direction of the tip</label>
+    <label><input type="radio" name="q4"> D) Shift body weight toward the direction of the tip to counterbalance</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>5. Which factor most significantly affects a forklift's stability and increases the risk of tipping?</p>
+  <div class="answers">
+    <label><input type="radio" name="q5"> A) The color of the forklift</label>
+    <label><input type="radio" name="q5"> B) The weight and position of the load</label>
+    <label><input type="radio" name="q5"> C) The speed of the forklift</label>
+    <label><input type="radio" name="q5"> D) The age of the forklift</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>6. When operating a forklift on an incline with a load, how should the operator proceed?</p>
+  <div class="answers">
+    <label><input type="radio" name="q6"> A) Drive forward uphill and in reverse downhill, keeping the load uphill</label>
+    <label><input type="radio" name="q6"> B) Drive forward both uphill and downhill</label>
+    <label><input type="radio" name="q6"> C) Drive in reverse both uphill and downhill</label>
+    <label><input type="radio" name="q6"> D) It does not matter as long as the load is secure</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>7. What is the primary purpose of the overhead guard on a forklift?</p>
+  <div class="answers">
+    <label><input type="radio" name="q7"> A) To protect the operator from falling objects</label>
+    <label><input type="radio" name="q7"> B) To provide shade for the operator</label>
+    <label><input type="radio" name="q7"> C) To enhance the forklift's aerodynamics</label>
+    <label><input type="radio" name="q7"> D) To support additional lifting attachments</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>8. How often should a forklift operator receive formal training and evaluation?</p>
+  <div class="answers">
+    <label><input type="radio" name="q8"> A) Every year</label>
+    <label><input type="radio" name="q8"> B) Every two years</label>
+    <label><input type="radio" name="q8"> C) Every three years</label>
+    <label><input type="radio" name="q8"> D) Only once, upon initial certification</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>9. What should an operator do if they discover a malfunction during forklift operation?</p>
+  <div class="answers">
+    <label><input type="radio" name="q9"> A) Continue operating and report it at the end of the shift</label>
+    <label><input type="radio" name="q9"> B) Stop the forklift safely and report the issue immediately</label>
+    <label><input type="radio" name="q9"> C) Attempt to repair the malfunction themselves</label>
+    <label><input type="radio" name="q9"> D) Ignore it if the forklift is still operable</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>10. Why is it important to maintain a safe distance from the edge when operating a forklift on a loading dock?</p>
+  <div class="answers">
+    <label><input type="radio" name="q10"> A) To prevent the forklift from falling off the dock</label>
+    <label><input type="radio" name="q10"> B) To allow space for pedestrians to pass</label>
+    <label><input type="radio" name="q10"> C) To avoid damaging the dock edge</label>
+    <label><input type="radio" name="q10"> D) To ensure better visibility of the surroundings</label>
+  </div>
+</div>
+    <div style="text-align: center; margin-top: 30px;">
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+  </form>
+  <div id="results"></div>
+</div>
+
+<script>
+  document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const correctAnswers = {
+      q1: 'C',
+      q2: 'C',
+      q3: 'C',
+      q4: 'B',
+      q5: 'B',
+      q6: 'A',
+      q7: 'A',
+      q8: 'C',
+      q9: 'B',
+      q10: 'A'
+    };
+
+    let score = 0;
+    for (let q in correctAnswers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(correctAnswers[q])) {
+        score++;
+      }
+    }
+
+    let level = '';
+    if (score <= 4) level = 'Beginner';
+    else if (score <= 7) level = 'Intermediate';
+    else if (score <= 9) level = 'Advanced';
+    else level = 'Expert';
+
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `You scored <strong>${score}/10</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

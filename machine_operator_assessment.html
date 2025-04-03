@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Operator Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2e2e2e;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Machine Operator Assessment</h2>
+  <form id="assessmentForm">
+    <div class="question">
+      <p>1. What is the first step before starting any machine operation?</p>
+      <div class="answers">
+        <label><input type="radio" name="q1"> A) Adjust the settings</label>
+        <label><input type="radio" name="q1"> B) Verify material supply</label>
+        <label><input type="radio" name="q1"> C) Perform a safety inspection and check lockout/tagout status</label>
+        <label><input type="radio" name="q1"> D) Clock in for the shift</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. What does the term "lockout/tagout" refer to in a manufacturing environment?</p>
+      <div class="answers">
+        <label><input type="radio" name="q2"> A) A method of labeling defective products</label>
+        <label><input type="radio" name="q2"> B) A process to secure tools in a toolbox</label>
+        <label><input type="radio" name="q2"> C) A safety procedure to prevent equipment from being energized during maintenance</label>
+        <label><input type="radio" name="q2"> D) A quality control tracking process</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3. What should an operator do if the machine begins making unusual noises during operation?</p>
+      <div class="answers">
+        <label><input type="radio" name="q3"> A) Turn up the radio</label>
+        <label><input type="radio" name="q3"> B) Continue running the machine until the shift ends</label>
+        <label><input type="radio" name="q3"> C) Shut down the machine and report the issue immediately</label>
+        <label><input type="radio" name="q3"> D) Check if others have the same problem</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>4. Which PPE is most critical when operating cutting or rotating equipment?</p>
+      <div class="answers">
+        <label><input type="radio" name="q4"> A) Face shield and gloves</label>
+        <label><input type="radio" name="q4"> B) Loose-fitting clothing and sandals</label>
+        <label><input type="radio" name="q4"> C) Safety glasses and hairnet</label>
+        <label><input type="radio" name="q4"> D) Earplugs and dust mask</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>5. Why is maintaining proper lubrication levels in machines important?</p>
+      <div class="answers">
+        <label><input type="radio" name="q5"> A) It reduces the weight of the equipment</label>
+        <label><input type="radio" name="q5"> B) It keeps the machine looking clean</label>
+        <label><input type="radio" name="q5"> C) It prevents wear and overheating of components</label>
+        <label><input type="radio" name="q5"> D) It improves the color of final products</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>6. How often should machine guards be inspected for integrity and proper placement?</p>
+      <div class="answers">
+        <label><input type="radio" name="q6"> A) Once a year</label>
+        <label><input type="radio" name="q6"> B) Only after a breakdown</label>
+        <label><input type="radio" name="q6"> C) At the start of every shift</label>
+        <label><input type="radio" name="q6"> D) When the operator has free time</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>7. What is a common indicator that a machine is not calibrated correctly?</p>
+      <div class="answers">
+        <label><input type="radio" name="q7"> A) Perfectly symmetrical output</label>
+        <label><input type="radio" name="q7"> B) Inconsistent part dimensions or product defects</label>
+        <label><input type="radio" name="q7"> C) Operator satisfaction</label>
+        <label><input type="radio" name="q7"> D) Loud fan noise</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>8. What is the purpose of an emergency stop (E-Stop) button on a machine?</p>
+      <div class="answers">
+        <label><input type="radio" name="q8"> A) To activate the maintenance log</label>
+        <label><input type="radio" name="q8"> B) To alert the supervisor</label>
+        <label><input type="radio" name="q8"> C) To immediately stop the machine in case of danger</label>
+        <label><input type="radio" name="q8"> D) To turn off the lights in the work area</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>9. Before changing tooling or adjusting machine settings, an operator should always:</p>
+      <div class="answers">
+        <label><input type="radio" name="q9"> A) Watch a training video</label>
+        <label><input type="radio" name="q9"> B) Ask a coworker to do it</label>
+        <label><input type="radio" name="q9"> C) Perform proper lockout/tagout procedures and ensure power is off</label>
+        <label><input type="radio" name="q9"> D) Use trial-and-error</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>10. What is the benefit of monitoring machine output and cycle time?</p>
+      <div class="answers">
+        <label><input type="radio" name="q10"> A) It adds more paperwork to the job</label>
+        <label><input type="radio" name="q10"> B) It helps identify efficiency issues and ensures consistent quality</label>
+        <label><input type="radio" name="q10"> C) It increases the chance of downtime</label>
+        <label><input type="radio" name="q10"> D) It reduces the need for quality checks</label>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+  </form>
+  <div id="results"></div>
+</div>
+
+<script>
+  document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const correctAnswers = {
+      q1: 'C',
+      q2: 'C',
+      q3: 'C',
+      q4: 'A',
+      q5: 'C',
+      q6: 'C',
+      q7: 'B',
+      q8: 'C',
+      q9: 'C',
+      q10: 'B'
+    };
+
+    let score = 0;
+    for (let q in correctAnswers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(correctAnswers[q])) {
+        score++;
+      }
+    }
+
+    let level = '';
+    if (score <= 4) level = 'Beginner';
+    else if (score <= 7) level = 'Intermediate';
+    else if (score <= 9) level = 'Advanced';
+    else level = 'Expert';
+
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `You scored <strong>${score}/10</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

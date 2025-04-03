@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welding Personality and Aptitude Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('Background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Welding Personality and Aptitude Assessment</h2>
+  <form id="assessmentForm"></form>
+  <div style="text-align: center; margin-top: 20px;">
+    <button type="submit" class="submit-btn" form="assessmentForm">Submit</button>
+  </div>
+  <div id="results"></div>
+</div>
+
+<script defer>
+  const questions = [
+    {q: 'When starting a challenging welding project, your initial thought usually is:', a: 'B', options: ['"I\'ll rely on past experience to handle this."', '"I should carefully plan and confirm all details before beginning."', '"I\'ll ask coworkers how they would tackle this project first."', '"I can quickly figure this out as I go."']},
+    {q: 'If your supervisor isn’t available and you notice equipment performing slightly below standard, you would:', a: 'D', options: ['Continue working and adjust your technique to compensate.', 'Immediately halt work until you find someone who can fix it.', 'Check if others noticed the same issue and discuss next steps.', 'Take initiative to inspect and resolve the issue yourself safely.']},
+    {q: 'You\'re working with a team member whose methods differ from yours, but they\'re achieving similar results. You feel:', a: 'B', options: ['Uncomfortable—preferring methods you\'ve personally tested.', 'Interested—open to learning different ways of working.', 'Indifferent—as long as the job gets done correctly.', 'Concerned—they should adopt standard methods to avoid confusion.']},
+    {q: 'Facing repeated issues with a welding technique, your next step is to:', a: 'B', options: ['Try the same approach again, hoping practice resolves the issue.', 'Research or seek expert advice to better understand the problem.', 'Move on and revisit later to avoid frustration.', 'Temporarily ask another welder to handle it.']},
+    {q: 'When deadlines are tight and pressure increases, you typically:', a: 'B', options: ['Maintain your usual pace, valuing precision over speed.', 'Increase speed moderately, carefully balancing efficiency and quality.', 'Accelerate significantly, confident your skills will prevent mistakes.', 'Ask management for extensions to preserve workmanship quality.']},
+    {q: 'Your reaction when assigned unfamiliar welding equipment is to:', a: 'A', options: ['Immediately test it yourself cautiously to gauge performance.', 'Study instructions thoroughly before using it.', 'Request a brief demonstration from an experienced colleague.', 'Delay its use until formal training can be provided.']},
+    {q: 'A coworker unintentionally violates a minor safety guideline. Your typical response would be:', a: 'A', options: ['Quietly mention it privately after the task to avoid embarrassment.', 'Publicly correct them immediately for everyone\'s benefit.', 'Report it directly to a supervisor to ensure official handling.', 'Ignore it, considering it minor and unlikely to recur.']},
+    {q: 'During routine maintenance, you discover a hidden safety risk. You:', a: 'B', options: ['Report it only if you believe it\'s an immediate danger.', 'Document and report the issue regardless of severity.', 'Quickly fix it yourself without formally reporting.', 'Informally mention it to coworkers, letting them decide the next steps.']},
+    {q: 'How do you typically handle constructive criticism about your welding work?', a: 'A', options: ['Accept it openly, immediately seeking to improve.', 'Listen but critically evaluate its validity before making changes.', 'Defend your methods initially but reflect on feedback later.', 'Feel discouraged initially, taking some time to fully accept it.']},
+    {q: 'In your opinion, reliability in welding primarily means:', a: 'B', options: ['Never missing deadlines, even if it means working faster.', 'Consistently maintaining high-quality standards, even if slower.', 'Always following procedures exactly, regardless of the outcome.', 'Being adaptable, adjusting procedures based on immediate needs.']}
+  ];
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('assessmentForm');
+    questions.forEach((item, index) => {
+      const qNum = index + 1;
+      const div = document.createElement('div');
+      div.className = 'question';
+      div.innerHTML = `<p>${qNum}. ${item.q}</p>`;
+      const answerDiv = document.createElement('div');
+      answerDiv.className = 'answers';
+      ['A', 'B', 'C', 'D'].forEach((letter, i) => {
+        const label = document.createElement('label');
+        label.innerHTML = `<input type="radio" name="q${qNum}"> ${letter}) ${item.options[i]}`;
+        answerDiv.appendChild(label);
+      });
+      div.appendChild(answerDiv);
+      form.appendChild(div);
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      questions.forEach((item, i) => {
+        const selected = document.querySelector(`input[name="q${i + 1}"]:checked`);
+        if (selected && selected.parentElement.textContent.trim().startsWith(item.a)) {
+          score++;
+        }
+      });
+      let result = '';
+      if (score <= 4) result = 'Not a fit for this role at this time';
+      else if (score <= 6) result = 'Needs coaching';
+      else if (score <= 8) result = 'Strong fit';
+      else result = 'Excellent fit';
+      document.getElementById('results').innerHTML = `You scored <strong>${score}/10</strong>. Recommendation: <strong>${result}</strong>`;
+    });
+  });
+</script>
+</body>
+</html>

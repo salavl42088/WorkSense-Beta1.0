@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weld Defects Visual Matching Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('Background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      display: block;
+      margin: 20px auto;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #86d986;
+      border-top: 2px solid #55acee;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Weld Defects Identification Test</h2>
+  <p style="text-align:center">Match each numbered weld defect with the correct name from the list below the image.</p>
+  <img src="weld_defects.png" alt="Weld Defect Diagram">
+  <form id="defectForm">
+    <div class="question"><label for="q1">1.</label><select name="q1"><option value="">-- Select Defect --</option><option value="Ideal Weld">Ideal Weld</option><option value="Cracks">Cracks</option><option value="Porosity">Porosity</option><option value="Undercut">Undercut</option><option value="Slag Inclusion">Slag Inclusion</option><option value="Overlap">Overlap</option><option value="Incomplete Fusion">Incomplete Fusion</option><option value="Incomplete Penetration">Incomplete Penetration</option><option value="Spatter">Spatter</option></select></div>
+    <div class="question"><label for="q2">2.</label><select name="q2"><option value="">-- Select Defect --</option><option value="Ideal Weld">Ideal Weld</option><option value="Cracks">Cracks</option><option value="Porosity">Porosity</option><option value="Undercut">Undercut</option><option value="Slag Inclusion">Slag Inclusion</option><option value="Overlap">Overlap</option><option value="Incomplete Fusion">Incomplete Fusion</option><option value="Incomplete Penetration">Incomplete Penetration</option><option value="Spatter">Spatter</option></select></div>
+    <div class="question"><label for="q3">3.</label><select name="q3"><option value="">-- Select Defect --</option><option value="Ideal Weld">Ideal Weld</option><option value="Cracks">Cracks</option><option value="Porosity">Porosity</option><option value="Undercut">Undercut</option><option value="Slag Inclusion">Slag Inclusion</option><option value="Overlap">Overlap</option><option value="Incomplete Fusion">Incomplete Fusion</option><option value="Incomplete Penetration">Incomplete Penetration</option><option value="Spatter">Spatter</option></select></div>
+    <div class="question"><label for="q4">4.</label><select name="q4"><option value="">-- Select Defect --</option><option value="Ideal Weld">Ideal Weld</option><option value="Cracks">Cracks</option><option value="Porosity">Porosity</option><option value="Undercut">Undercut</option><option value="Slag Inclusion">Slag Inclusion</option><option value="Overlap">Overlap</option><option value="Incomplete Fusion">Incomplete Fusion</option><option value="Incomplete Penetration">Incomplete Penetration</option><option value="Spatter">Spatter</option></select></div>
+    <div class="question"><label for="q5">5.</label><select name="q5"><option value="">-- Select Defect --</option><option value="Ideal Weld">Ideal Weld</option><option value="Cracks">Cracks</option><option value="Porosity">Porosity</option><option value="Undercut">Undercut</option><option value="Slag Inclusion">Slag Inclusion</option><option value="Overlap">Overlap</option><option value="Incomplete Fusion">Incomplete Fusion</option><option value="Incomplete Penetration">Incomplete Penetration</option><option value="Spatter">Spatter</option></select></div>
+    <div class="question"><label for="q6">6.</label><select name="q6"><option value="">-- Select Defect --</option><option value="Ideal Weld">Ideal Weld</option><option value="Cracks">Cracks</option><option value="Porosity">Porosity</option><option value="Undercut">Undercut</option><option value="Slag Inclusion">Slag Inclusion</option><option value="Overlap">Overlap</option><option value="Incomplete Fusion">Incomplete Fusion</option><option value="Incomplete Penetration">Incomplete Penetration</option><option value="Spatter">Spatter</option></select></div>
+    <div class="question"><label for="q7">7.</label><select name="q7"><option value="">-- Select Defect --</option><option value="Ideal Weld">Ideal Weld</option><option value="Cracks">Cracks</option><option value="Porosity">Porosity</option><option value="Undercut">Undercut</option><option value="Slag Inclusion">Slag Inclusion</option><option value="Overlap">Overlap</option><option value="Incomplete Fusion">Incomplete Fusion</option><option value="Incomplete Penetration">Incomplete Penetration</option><option value="Spatter">Spatter</option></select></div>
+    <div class="question"><label for="q8">8.</label><select name="q8"><option value="">-- Select Defect --</option><option value="Ideal Weld">Ideal Weld</option><option value="Cracks">Cracks</option><option value="Porosity">Porosity</option><option value="Undercut">Undercut</option><option value="Slag Inclusion">Slag Inclusion</option><option value="Overlap">Overlap</option><option value="Incomplete Fusion">Incomplete Fusion</option><option value="Incomplete Penetration">Incomplete Penetration</option><option value="Spatter">Spatter</option></select></div>
+    <div class="question"><label for="q9">9.</label><select name="q9"><option value="">-- Select Defect --</option><option value="Ideal Weld">Ideal Weld</option><option value="Cracks">Cracks</option><option value="Porosity">Porosity</option><option value="Undercut">Undercut</option><option value="Slag Inclusion">Slag Inclusion</option><option value="Overlap">Overlap</option><option value="Incomplete Fusion">Incomplete Fusion</option><option value="Incomplete Penetration">Incomplete Penetration</option><option value="Spatter">Spatter</option></select></div>
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+  <div id="results"></div>
+</div>
+<script>
+  const correctAnswers = {
+    q1: "Ideal Weld",
+    q2: "Undercut",
+    q3: "Incomplete Fusion",
+    q4: "Cracks",
+    q5: "Slag Inclusion",
+    q6: "Incomplete Penetration",
+    q7: "Porosity",
+    q8: "Overlap",
+    q9: "Spatter"
+  };
+
+  document.getElementById('defectForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    let score = 0;
+
+    for (let q in correctAnswers) {
+      const selected = document.querySelector(`[name="${q}"]`).value;
+      if (selected === correctAnswers[q]) {
+        score++;
+      }
+    }
+
+    const resultBox = document.getElementById('results');
+    resultBox.innerHTML = `You scored <strong>${score}/9</strong> defects correctly identified.`;
+  });
+</script>
+</body>
+</html>

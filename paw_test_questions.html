@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plasma Arc Welding (PAW) Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('Background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Plasma Arc Welding (PAW) Assessment</h2>
+  <form id="assessmentForm"></form>
+  <div style="text-align: center; margin-top: 20px;">
+    <button type="submit" class="submit-btn" form="assessmentForm">Submit</button>
+  </div>
+  <div id="results"></div>
+</div>
+
+<script>
+  const questions = [
+    {q: 'What does PAW stand for?', a: 'A', options: ['Plasma Arc Welding', 'Portable Arc Welding', 'Precision Arc Welding', 'Pressure Arc Welding']},
+    {q: 'What differentiates PAW from other welding processes like GTAW?', a: 'C', options: ['Use of shielding gas', 'Type of tungsten electrode', 'Formation and use of a plasma arc', 'Electrode consumption']},
+    {q: 'Which gas is primarily used to create the plasma arc in PAW?', a: 'B', options: ['Oxygen', 'Argon', 'Carbon Dioxide', 'Nitrogen']},
+    {q: 'Why is PAW often chosen for aerospace applications?', a: 'B', options: ['Its portability', 'Its precision and control over heat input', 'Lower equipment cost', 'Ability to weld rusty materials']},
+    {q: 'What is the purpose of the orifice gas nozzle in PAW?', a: 'B', options: ['Shield the weld pool from atmospheric contamination', 'Focus and constrict the plasma arc', 'Cool the electrode', 'Reduce spatter formation']},
+    {q: 'How often should welding equipment be inspected for safety and functionality in PAW?', a: 'B', options: ['Annually', 'Before each use', 'Monthly', 'Weekly']},
+    {q: 'What could cause instability in the plasma arc during PAW?', a: 'B', options: ['Proper electrode gap and gas flow rate', 'Incorrect electrode gap or inadequate gas flow', 'High-quality tungsten electrode', 'Use of correct current settings']},
+    {q: 'Which personal protective equipment (PPE) is essential during PAW operations?', a: 'A', options: ['Welding helmet with appropriate filter lens, flame-resistant gloves, and protective clothing', 'Safety glasses only', 'Earplugs and dust mask', 'Hard hat and steel-toed boots']},
+    {q: 'What is one advantage of the keyhole welding technique commonly used in PAW?', a: 'A', options: ['Higher weld speeds and deep penetration', 'Increased spatter', 'Reduced electrode wear', 'Lower heat input']},
+    {q: 'Why must proper ventilation be maintained during PAW?', a: 'A', options: ['To remove harmful fumes and gases', 'To cool down the plasma torch', 'To improve arc visibility', 'To increase weld penetration']},
+    {q: 'What type of electrode is used in PAW?', a: 'B', options: ['Consumable wire electrode', 'Non-consumable tungsten electrode', 'Coated stick electrode', 'Carbon electrode']},
+    {q: 'What is the role of shielding gas in PAW?', a: 'A', options: ['Protecting the weld pool from atmospheric contaminants', 'Cooling the electrode', 'Stabilizing electrode voltage', 'Increasing welding speed']},
+    {q: 'What information does a Welding Procedure Specification (WPS) provide?', a: 'A', options: ['Guidelines and parameters for performing welding operations', 'Inventory of welding consumables', 'Schedule of welding projects', 'List of qualified welders in the shop']},
+    {q: 'If porosity is observed in PAW welds, what is the likely cause?', a: 'B', options: ['Excessive electrode length', 'Inadequate shielding gas coverage', 'Proper electrode selection', 'Correct gas flow rates']},
+    {q: 'Why is preheating sometimes necessary in PAW?', a: 'B', options: ['To enhance weld penetration', 'To minimize distortion and cracking', 'To accelerate welding speed', 'To reduce electrode wear']}
+  ];
+
+  const form = document.getElementById('assessmentForm');
+  questions.forEach((item, index) => {
+    const qNum = index + 1;
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<p>${qNum}. ${item.q}</p>`;
+    const answerDiv = document.createElement('div');
+    answerDiv.className = 'answers';
+    ['A', 'B', 'C', 'D'].forEach((letter, i) => {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="q${qNum}"> ${letter}) ${item.options[i]}`;
+      answerDiv.appendChild(label);
+    });
+    div.appendChild(answerDiv);
+    form.appendChild(div);
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let score = 0;
+    questions.forEach((item, i) => {
+      const selected = document.querySelector(`input[name="q${i + 1}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(item.a)) {
+        score++;
+      }
+    });
+    let level = '';
+    if (score <= 7) level = 'Beginner';
+    else if (score <= 11) level = 'Intermediate';
+    else if (score <= 13) level = 'Advanced';
+    else level = 'Expert';
+    document.getElementById('results').innerHTML = `You scored <strong>${score}/15</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

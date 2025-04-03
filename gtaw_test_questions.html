@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gas Tungsten Arc Welding (GTAW) Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('Background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Gas Tungsten Arc Welding (GTAW) Assessment</h2>
+  <form id="assessmentForm"></form>
+  <div style="text-align: center; margin-top: 20px;">
+    <button type="submit" class="submit-btn" form="assessmentForm">Submit</button>
+  </div>
+  <div id="results"></div>
+</div>
+
+<script>
+  const questions = [
+    {q: 'Which shielding gas is commonly used in GTAW for welding stainless steel?', a: 'B', options: ['Carbon Dioxide', 'Argon', 'Helium', 'Nitrogen']},
+    {q: 'What is the primary function of the tungsten electrode in GTAW?', a: 'B', options: ['Acts as a filler material', 'Conducts electricity to create the arc', 'Shields the weld pool from contaminants', 'Provides flux to clean the weld area']},
+    {q: 'Why is it essential to wear flame-resistant gloves and a welding helmet with appropriate shading during GTAW?', a: 'B', options: ['To enhance dexterity and visibility', 'To protect against ultraviolet radiation and heat', 'To prevent electrical shock', 'To improve grip on the welding torch']},
+    {q: 'In GTAW, what does using Direct Current Electrode Negative (DCEN) polarity achieve?', a: 'C', options: ['Increased heat on the tungsten electrode', 'Enhanced cleaning action on the workpiece', 'Deeper weld penetration', 'Reduced tungsten electrode life']},
+    {q: 'What is a common cause of tungsten contamination in GTAW?', a: 'B', options: ['Excessive gas flow rate', 'Touching the tungsten electrode to the molten weld pool', 'Using too large a tungsten electrode', 'Insufficient amperage settings']},
+    {q: 'How often should welding equipment be inspected for safety and functionality?', a: 'C', options: ['Monthly', 'Weekly', 'Before each use', 'Annually']},
+    {q: 'What is the recommended gas flow rate for GTAW to ensure proper shielding?', a: 'B', options: ['5-10 CFH', '15-20 CFH', '25-30 CFH', '35-40 CFH']},
+    {q: 'Which of the following is a typical symptom of inadequate gas shielding in GTAW?', a: 'B', options: ['Excessive spatter', 'Porosity in the weld bead', 'Undercut along the weld edges', 'Lack of fusion']},
+    {q: 'When preparing to weld aluminum using GTAW, which current type is typically used?', a: 'C', options: ['Direct Current Electrode Positive (DCEP)', 'Direct Current Electrode Negative (DCEN)', 'Alternating Current (AC)', 'Pulsed Direct Current']},
+    {q: 'What is the purpose of the high-frequency start feature in GTAW?', a: 'B', options: ['To increase welding speed', 'To stabilize the arc without touching the workpiece', 'To reduce heat input', 'To improve filler metal deposition']},
+    {q: 'Which personal protective equipment (PPE) is essential when performing GTAW?', a: 'B', options: ['Safety glasses only', 'Welding helmet with appropriate filter lens, flame-resistant gloves, and protective clothing', 'Earplugs and dust mask', 'Hard hat and steel-toed boots']},
+    {q: 'What should be done if the tungsten electrode becomes contaminated during welding?', a: 'C', options: ['Continue welding to burn off the contamination', 'Clean the electrode with a wire brush', 'Stop welding and regrind the tungsten electrode', 'Increase the gas flow rate to compensate']},
+    {q: 'In GTAW, what effect does increasing the travel speed have on the weld bead?', a: 'B', options: ['Increases bead width', 'Decreases bead penetration', 'Increases heat input', 'Reduces the risk of porosity']},
+    {q: 'Why is proper ventilation important during GTAW?', a: 'B', options: ['To cool the welding equipment', 'To remove harmful fumes and gases from the breathing zone', 'To prevent overheating of the workpiece', 'To improve visibility of the weld area']},
+    {q: 'What information does a Welding Procedure Specification (WPS) provide?', a: 'A', options: ['Guidelines and parameters for performing welding operations', 'Inventory of welding consumables', 'Schedule of welding projects', 'List of qualified welders in the shop']}
+  ];
+
+  const form = document.getElementById('assessmentForm');
+  questions.forEach((item, index) => {
+    const qNum = index + 1;
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<p>${qNum}. ${item.q}</p>`;
+    const answerDiv = document.createElement('div');
+    answerDiv.className = 'answers';
+    ['A', 'B', 'C', 'D'].forEach((letter, i) => {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="q${qNum}"> ${letter}) ${item.options[i]}`;
+      answerDiv.appendChild(label);
+    });
+    div.appendChild(answerDiv);
+    form.appendChild(div);
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let score = 0;
+    questions.forEach((item, i) => {
+      const selected = document.querySelector(`input[name="q${i + 1}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(item.a)) {
+        score++;
+      }
+    });
+    let level = '';
+    if (score <= 7) level = 'Beginner';
+    else if (score <= 11) level = 'Intermediate';
+    else if (score <= 13) level = 'Advanced';
+    else level = 'Expert';
+    document.getElementById('results').innerHTML = `You scored <strong>${score}/15</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

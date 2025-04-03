@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping & Receiving Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2e2e2e;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Shipping & Receiving Assessment</h2>
+  <form id="assessmentForm">
+    <div class="question">
+      <p>1. What is the primary purpose of a bill of lading?</p>
+      <div class="answers">
+        <label><input type="radio" name="q1"> A) To track employee work hours</label>
+        <label><input type="radio" name="q1"> B) To serve as a receipt and contract for the shipment of goods</label>
+        <label><input type="radio" name="q1"> C) To list safety procedures for loading docks</label>
+        <label><input type="radio" name="q1"> D) To determine the price of raw materials</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>2. What should you do if you receive a package that appears damaged?</p>
+      <div class="answers">
+        <label><input type="radio" name="q2"> A) Accept it and place it in storage</label>
+        <label><input type="radio" name="q2"> B) Open it immediately to verify contents</label>
+        <label><input type="radio" name="q2"> C) Refuse the package and send it back</label>
+        <label><input type="radio" name="q2"> D) Document the damage, take photos, and notify a supervisor before proceeding</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>3. Why is it important to scan or log packages when receiving inventory?</p>
+      <div class="answers">
+        <label><input type="radio" name="q3"> A) It helps train new employees</label>
+        <label><input type="radio" name="q3"> B) It ensures breaks are recorded</label>
+        <label><input type="radio" name="q3"> C) It provides an accurate inventory count and traceability</label>
+        <label><input type="radio" name="q3"> D) It updates employee schedules</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>4. Which PPE is most commonly required in shipping and receiving areas?</p>
+      <div class="answers">
+        <label><input type="radio" name="q4"> A) Welding mask</label>
+        <label><input type="radio" name="q4"> B) Steel-toe boots and high-visibility vests</label>
+        <label><input type="radio" name="q4"> C) Hearing protection and gloves</label>
+        <label><input type="radio" name="q4"> D) Face shield and respirator</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>5. What is the best way to verify that an order is complete before shipping?</p>
+      <div class="answers">
+        <label><input type="radio" name="q5"> A) Assume it's correct if the box is sealed</label>
+        <label><input type="radio" name="q5"> B) Rely on verbal confirmation</label>
+        <label><input type="radio" name="q5"> C) Cross-check the items against the packing slip or shipping manifest</label>
+        <label><input type="radio" name="q5"> D) Scan the barcodes and trust the system</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>6. What should be done before operating a dock leveler or dock plate?</p>
+      <div class="answers">
+        <label><input type="radio" name="q6"> A) Sweep the loading dock</label>
+        <label><input type="radio" name="q6"> B) Check that the trailer is secured with chocks or restraints</label>
+        <label><input type="radio" name="q6"> C) Confirm the shipping label is correct</label>
+        <label><input type="radio" name="q6"> D) Measure the weight of the package</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>7. If a shipment must be expedited, what should the receiver or shipper do?</p>
+      <div class="answers">
+        <label><input type="radio" name="q7"> A) Change the label color</label>
+        <label><input type="radio" name="q7"> B) Skip inspection to save time</label>
+        <label><input type="radio" name="q7"> C) Use proper expedited service codes and alert the carrier</label>
+        <label><input type="radio" name="q7"> D) Mark the shipment as fragile</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>8. Why are proper stacking and weight distribution important in shipping pallets?</p>
+      <div class="answers">
+        <label><input type="radio" name="q8"> A) It makes the warehouse look cleaner</label>
+        <label><input type="radio" name="q8"> B) It reduces handling time for clerks</label>
+        <label><input type="radio" name="q8"> C) It ensures stability and prevents product damage during transport</label>
+        <label><input type="radio" name="q8"> D) It makes counting easier for inventory staff</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>9. What is the most important first step when receiving hazardous materials?</p>
+      <div class="answers">
+        <label><input type="radio" name="q9"> A) Ventilate the receiving dock</label>
+        <label><input type="radio" name="q9"> B) Put on a face mask</label>
+        <label><input type="radio" name="q9"> C) Review the Safety Data Sheet (SDS) for handling and storage instructions</label>
+        <label><input type="radio" name="q9"> D) Open the container to check contents</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>10. What’s the safest way to prevent theft or misplacement of packages?</p>
+      <div class="answers">
+        <label><input type="radio" name="q10"> A) Keep packages in an open space where they’re easy to spot</label>
+        <label><input type="radio" name="q10"> B) Rely on coworkers to monitor the area</label>
+        <label><input type="radio" name="q10"> C) Maintain clear documentation and restricted access to high-value goods</label>
+        <label><input type="radio" name="q10"> D) Use clear tape to seal boxes</label>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+  </form>
+  <div id="results"></div>
+</div>
+
+<script>
+  document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const correctAnswers = {
+      q1: 'B',
+      q2: 'D',
+      q3: 'C',
+      q4: 'B',
+      q5: 'C',
+      q6: 'B',
+      q7: 'C',
+      q8: 'C',
+      q9: 'C',
+      q10: 'C'
+    };
+
+    let score = 0;
+    for (let q in correctAnswers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(correctAnswers[q])) {
+        score++;
+      }
+    }
+
+    let level = '';
+    if (score <= 4) level = 'Beginner';
+    else if (score <= 7) level = 'Intermediate';
+    else if (score <= 9) level = 'Advanced';
+    else level = 'Expert';
+
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `You scored <strong>${score}/10</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>

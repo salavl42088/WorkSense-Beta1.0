@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality Control Inspector Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2e2e2e;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .assessment-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #55acee;
+    }
+    .question {
+      margin-bottom: 25px;
+      background-color: rgba(34, 34, 34, 0.95);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .submit-btn {
+      background-color: #55acee;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .submit-btn:hover {
+      background-color: #1e3c56;
+    }
+    #results {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #86d986;
+    }
+  </style>
+</head>
+<body>
+<div class="assessment-container">
+  <h2>Quality Control Inspector Assessment</h2>
+  <form id="assessmentForm">
+    <!-- 10 Questions Here -->
+    <div class="question">
+      <p>1. What is the main responsibility of a quality control inspector?</p>
+      <div class="answers">
+        <label><input type="radio" name="q1"> A) Managing shipping schedules</label>
+        <label><input type="radio" name="q1"> B) Overseeing sales performance</label>
+        <label><input type="radio" name="q1"> C) Ensuring products meet defined quality standards</label>
+        <label><input type="radio" name="q1"> D) Operating production machinery</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>2. Which tool is most commonly used to measure small dimensional tolerances?</p>
+      <div class="answers">
+        <label><input type="radio" name="q2"> A) Hammer</label>
+        <label><input type="radio" name="q2"> B) Caliper or micrometer</label>
+        <label><input type="radio" name="q2"> C) Ruler</label>
+        <label><input type="radio" name="q2"> D) Protractor</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>3. What does a control chart help a QC inspector monitor?</p>
+      <div class="answers">
+        <label><input type="radio" name="q3"> A) Attendance records</label>
+        <label><input type="radio" name="q3"> B) Equipment oil levels</label>
+        <label><input type="radio" name="q3"> C) Variability in manufacturing processes over time</label>
+        <label><input type="radio" name="q3"> D) Sales trends</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>4. If you find a defective product on the line, what is the best immediate action?</p>
+      <div class="answers">
+        <label><input type="radio" name="q4"> A) Hide the part and keep working</label>
+        <label><input type="radio" name="q4"> B) Notify your supervisor and document the defect</label>
+        <label><input type="radio" name="q4"> C) Attempt to fix it without telling anyone</label>
+        <label><input type="radio" name="q4"> D) Send it to shipping to stay on schedule</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>5. What is the purpose of a first article inspection (FAI)?</p>
+      <div class="answers">
+        <label><input type="radio" name="q5"> A) To audit financial records</label>
+        <label><input type="radio" name="q5"> B) To verify production setup by inspecting the first unit produced</label>
+        <label><input type="radio" name="q5"> C) To review safety procedures with staff</label>
+        <label><input type="radio" name="q5"> D) To clean the work area</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>6. Why is traceability important in quality control?</p>
+      <div class="answers">
+        <label><input type="radio" name="q6"> A) It helps track product marketing success</label>
+        <label><input type="radio" name="q6"> B) It identifies the source of defects and ensures accountability</label>
+        <label><input type="radio" name="q6"> C) It reduces the need for documentation</label>
+        <label><input type="radio" name="q6"> D) It allows for faster shipping</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>7. What should be done if measuring tools are found to be out of calibration?</p>
+      <div class="answers">
+        <label><input type="radio" name="q7"> A) Use them temporarily until new ones arrive</label>
+        <label><input type="radio" name="q7"> B) Calibrate them yourself without documentation</label>
+        <label><input type="radio" name="q7"> C) Remove them from use and report to a supervisor or maintenance</label>
+        <label><input type="radio" name="q7"> D) Only use them for non-critical parts</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>8. Which document provides detailed requirements a product must meet?</p>
+      <div class="answers">
+        <label><input type="radio" name="q8"> A) Pay stub</label>
+        <label><input type="radio" name="q8"> B) Sales forecast</label>
+        <label><input type="radio" name="q8"> C) Job safety analysis (JSA)</label>
+        <label><input type="radio" name="q8"> D) Technical drawing or specification sheet</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>9. What is a common sign that a manufacturing process is out of control?</p>
+      <div class="answers">
+        <label><input type="radio" name="q9"> A) Consistent part sizes</label>
+        <label><input type="radio" name="q9"> B) Decreasing scrap rate</label>
+        <label><input type="radio" name="q9"> C) Frequent variation outside of control limits</label>
+        <label><input type="radio" name="q9"> D) Reduced setup times</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>10. How can a QC inspector help prevent recurring defects?</p>
+      <div class="answers">
+        <label><input type="radio" name="q10"> A) Ignore the defect and focus on output</label>
+        <label><input type="radio" name="q10"> B) Blame the machine operator</label>
+        <label><input type="radio" name="q10"> C) Document the issue, identify root cause, and suggest corrective actions</label>
+        <label><input type="radio" name="q10"> D) Recommend skipping inspections</label>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+  </form>
+  <div id="results"></div>
+</div>
+
+<script>
+  document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const correctAnswers = {
+      q1: 'C',
+      q2: 'B',
+      q3: 'C',
+      q4: 'B',
+      q5: 'B',
+      q6: 'B',
+      q7: 'C',
+      q8: 'D',
+      q9: 'C',
+      q10: 'C'
+    };
+
+    let score = 0;
+    for (let q in correctAnswers) {
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      if (selected && selected.parentElement.textContent.trim().startsWith(correctAnswers[q])) {
+        score++;
+      }
+    }
+
+    let level = '';
+    if (score <= 4) level = 'Beginner';
+    else if (score <= 7) level = 'Intermediate';
+    else if (score <= 9) level = 'Advanced';
+    else level = 'Expert';
+
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `You scored <strong>${score}/10</strong>. Skill Level: <strong>${level}</strong>`;
+  });
+</script>
+</body>
+</html>
